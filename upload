@@ -1,3 +1,90 @@
+<form enctype="multipart/form-data">
+    <div class="invalid">
+        <h3>Invalid File Type</h3>
+    </div>
+    <div class="upload-wrapper">
+        <button type="button" class="upload-wrp">
+            <input type="file" class="upload-input">
+            Upload File
+        </button>   
+    </div>
+    <div class="img-wrp">
+        <div class="img">
+            <img src="{{fileImage}}" alt="img" width="100%" height="200">
+        </div>
+        <h2>Name: {{fileUploadName}}</h2>
+        <p>Size: {{fileUploadSize}}</p>
+        <p class="percent">5%</p>
+        <div id="progressBar" class="progress"></div>
+    </div>
+</form>
+
+
+.invalid {
+        display: none;
+    h3{
+        width: 800px;
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
+        padding: 20px;
+    }
+}
+
+.invalid.active{
+    display: block;
+}
+
+
+.upload-wrapper{
+    width: 800px;
+    height: 400px;
+    background-color: #f6f6f6;
+    border: 2px dotted rgb(79, 79, 79);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+.upload-wrp{
+    position: relative;
+    background-color: red;
+    color: #fff;
+    width: 120px;
+    height: 50px;
+    border: none;
+
+    .upload-input{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        opacity: 0;
+    } 
+  }
+}
+.img-wrp{
+    margin-top: 20px;
+
+    h2{
+        margin-top: 20px;
+    }
+}
+
+.progress{
+    width: 20%;
+    height: 4px;
+    background-color: red;
+}
+
+
+
+
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
